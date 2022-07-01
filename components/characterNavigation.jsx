@@ -10,11 +10,15 @@ export default function CharactersNavigation(){
         <CharacterStack.Navigator>
             <CharacterStack.Screen name="Search"
                 component={Search}
-                options={{title: "Recherche"}}
+                options={{title: "Rechercher un personnage"}}
             />
             <CharacterStack.Screen name="CharacterList"
                 component={CharacterList}
-                options={{title: "Liste"}}
+                options={({route})=> {
+                    return{
+                        title: ` Liste de "${route.params.search}"`
+                    }
+                }}
             />
             <CharacterStack.Screen name="CharacterView"
                 component={CharacterView}

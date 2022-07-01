@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
         height: 40
     },
     container:{
-        marginHorizontal: 10
+        marginHorizontal: 10,
+        marginVertical: 20
     }
 });

@@ -17,9 +17,12 @@ export default function App() {
 				tabBarIcon: ({ focused, color, size }) => {
 					let iconName;
 					switch (route.name) {
-						case 'CharactersSearch':
+						case 'Rechercher un personnage':
 							iconName = 'search'
 							break;
+            case 'Liste des épisodes':
+              iconName = 'list'
+              break;
             default:
               iconName ="menu"
 					}
@@ -29,8 +32,8 @@ export default function App() {
 				},
 			})}
 		>
-    <AppTabs.Screen name="CharactersSearch" component={CharactersNavigation}  options={{headerShown: false}} />
-    <AppTabs.Screen name="EpisodesListe" component={EpisodesNavigation}  options={{headerShown: false}} />
+    <AppTabs.Screen name="Rechercher un personnage" component={CharactersNavigation}  options={{headerShown: false}} />
+    <AppTabs.Screen name="Liste des épisodes" component={EpisodesNavigation}  options={{headerShown: false}} />
     </AppTabs.Navigator>
    </NavigationContainer>
   );
