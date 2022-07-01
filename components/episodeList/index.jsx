@@ -13,9 +13,7 @@ export default function EpisodesListe(){
             try {
                 let dataEpisode = await AsyncStorage.getItem('episodesList')
                 dataEpisode = JSON.parse(dataEpisode)
-                console.log(dataEpisode);
                 if (dataEpisode === null){
-                    console.log('nullll');
                     try{
                         await AsyncStorage.setItem('episodesList', JSON.stringify(ALL_EPISODES))
                     } catch(e){
@@ -24,7 +22,7 @@ export default function EpisodesListe(){
                 }
                 setEpisodesList(dataEpisode === null ? ALL_EPISODES :  dataEpisode)
             } catch (e) {
-                console.log('eeeeee',e);
+                console.log(e);
                 // saving error
             }
         }
@@ -35,7 +33,6 @@ export default function EpisodesListe(){
 
     const seeEpisode = async (nb) => {
         const newList = episodesList.filter(episode => nb !== episode)
-        console.log(newList);
         setEpisodesList(newList)
 
         try{
